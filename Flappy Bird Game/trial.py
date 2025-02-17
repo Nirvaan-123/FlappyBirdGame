@@ -92,6 +92,7 @@ def main_game():
                     playerFlapped = True
 
         if is_collide(playerx, playery, upper_pipes, lower_pipes):
+            pygame.time.wait(400)
             return
 
         # Update score
@@ -129,7 +130,7 @@ def main_game():
             lower_pipes.pop(0)
 
         # Render elements
-        screen.blit(GAME_SPRITES['background'], (0, 0))
+        screen.blit(GAME_SPRITES['background'], (0, - 80))
         for upperPipe, lowerPipe in zip(upper_pipes, lower_pipes):
             screen.blit(GAME_SPRITES['pipe'][0], (upperPipe['x'], upperPipe['y']))
             screen.blit(GAME_SPRITES['pipe'][1], (lowerPipe['x'], lowerPipe['y']))
