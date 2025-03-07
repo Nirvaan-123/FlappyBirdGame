@@ -56,7 +56,7 @@ def welcome_screen():
             if event.type == QUIT or (event.type == KEYDOWN and event.key in [K_ESCAPE, K_q]):
                 pygame.quit()
                 sys.exit()
-            elif event.type == KEYDOWN and event.key in [K_SPACE, K_UP]:
+            elif event.type == (KEYDOWN and event.key in [K_SPACE, K_UP]) or MOUSEBUTTON:
                 return
 
 
@@ -86,7 +86,7 @@ def main_game():
             if event.type == QUIT or (event.type == KEYDOWN and event.key in [K_ESCAPE, K_q]):
                 pygame.quit()
                 sys.exit()
-            if event.type == KEYDOWN and event.key in [K_SPACE, K_UP]:
+            if event.type == (KEYDOWN and event.key in [K_SPACE, K_UP]) or MOUSEBUTTON:
                 if playery > 0:
                     playerVelY = playerFlapAccV
                     playerFlapped = True
